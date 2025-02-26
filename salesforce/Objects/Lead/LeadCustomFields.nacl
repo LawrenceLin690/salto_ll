@@ -76,6 +76,11 @@ type salesforce.Lead {
         fullName = "Salto CLI"
         default = false
         label = "Salto CLI"
+      },
+      {
+        fullName = "Salto PR"
+        default = false
+        label = "Salto PR"
       }
     ]
     sorted = false
