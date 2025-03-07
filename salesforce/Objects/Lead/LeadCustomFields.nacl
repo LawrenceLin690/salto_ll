@@ -77,7 +77,7 @@ type salesforce.Lead {
         label = "Salto CLI"
       },
       {
-        fullName = "Salto PR"
+        fullName = "Salto PR1"
         default = false
         label = "Salto PR"
       }
@@ -99,7 +99,7 @@ type salesforce.Lead {
     caseSensitive = false
     queryable = true
   }
-  salesforce.Number Score__c {
+    salesforce.Number Score__c {
     apiName = "Lead.Score__c"
     externalId = false
     label = "Score"
