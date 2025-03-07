@@ -9,9 +9,9 @@ salesforce.AssignmentRules Lead {
           assignedToType = "Queue"
           criteriaItems = [
             {
-              field = salesforce.Lead.field.ProductInterest__c
-              operation = "equals"
-              value = "Salto Hot"
+              field = salesforce.Lead.field.Score__c
+              operation = "greaterOrEqual"
+              value = "75"
             },
           ]
         },
@@ -20,9 +20,9 @@ salesforce.AssignmentRules Lead {
           assignedToType = "Queue"
           criteriaItems = [
             {
-              field = salesforce.Lead.field.ProductInterest__c
-              operation = "equals"
-              value = "Salto Cold"
+              field = salesforce.Lead.field.Score__c
+              operation = "lessThan"
+              value = "75"
             },
           ]
         },
