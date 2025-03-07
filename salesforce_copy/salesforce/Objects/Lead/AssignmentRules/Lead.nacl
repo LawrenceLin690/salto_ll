@@ -1,0 +1,65 @@
+salesforce.AssignmentRules Lead {
+  assignmentRule = [
+    {
+      fullName = "Lead Queue Assignment"
+      active = true
+      ruleEntry = [
+        {
+          assignedTo = salesforce.Queue.instance.Hot_Leads
+          assignedToType = "Queue"
+          criteriaItems = [
+            {
+              field = salesforce.Lead.field.ProductInterest__c
+              operation = "equals"
+              value = "Salto Hot"
+            },
+          ]
+        },
+        {
+          assignedTo = salesforce.Queue.instance.Cold_Leads
+          assignedToType = "Queue"
+          criteriaItems = [
+            {
+              field = salesforce.Lead.field.ProductInterest__c
+              operation = "equals"
+              value = "Salto Cold"
+            },
+          ]
+        },
+      ]
+    },
+    {
+      fullName = "Standard"
+      active = false
+      ruleEntry = [
+        {
+          assignedTo = "lawrenzo.y.lin@gmail.com"
+          assignedToType = "User"
+          criteriaItems = [
+            {
+              field = "Lead.Country"
+              operation = "equals"
+              value = "US,USA,United States,United States of America"
+            },
+          ]
+        },
+        {
+          assignedTo = "lawrenzo.y.lin@gmail.com"
+          assignedToType = "User"
+          criteriaItems = [
+            {
+              field = "Lead.Country"
+              operation = "notEqual"
+              value = "US,USA,United States,United States of America"
+            },
+          ]
+        },
+      ]
+    },
+  ]
+  fullName = "Lead"
+  _parent = [
+    salesforce.Lead,
+  ]
+  _alias = "Lead"
+}
